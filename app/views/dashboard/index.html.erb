@@ -1,2 +1,58 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<% content_for :javascript do %>
+    <script type="text/javascript">
+      ShopifyApp.ready(function(){
+        ShopifyApp.Bar.initialize({ title: "Home" });
+      });
+    </script>
+  <% end %>
+  <div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Order Status Update</a>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Link1", "/path1"  %></li>
+        <li><%= link_to "Link2", "/path2"  %></li>
+        <li><%= link_to "Link3", "/path3"  %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+  <h2>Products</h2>
+  
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
+    <% end %>
+  </ul>
+  
+  
+  <hr>
+  
+  <h2>Webhooks</h2>
+  
+  <% if @webhooks.present? %>
+    <ul>
+      <% @webhooks.each do |webhook| %>
+        <li><%= webhook.topic %> : <%= webhook.address %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
+  <% end %>
+  </div>    
+  </div><!--/row-->
+
+  <footer class="text-center" style="position:absolute; bottom:0px;">
+    <p>&copy; Avacci Telaegio Pvt. Ltd. 2019</p>
+  </footer>
+
+</div> <!-- /container -->
+  
