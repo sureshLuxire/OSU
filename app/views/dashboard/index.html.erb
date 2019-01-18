@@ -1,10 +1,15 @@
-<% content_for :javascript do %>
-    <script type="text/javascript">
-      ShopifyApp.ready(function(){
-        ShopifyApp.Bar.initialize({ title: "Home" });
-      });
-    </script>
-  <% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Status Update</title>
+    <%= csrf_meta_tags %>
+  
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
+    <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" %>
+    <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" %>
+  </head>
+
+  <body>
   <div class="navbar navbar-default navbar-static-top">
   <div class="container">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -22,32 +27,12 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-9">
-  <h2>Products</h2>
-  
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
-    <% end %>
-  </ul>
-  
-  
-  <hr>
-  
-  <h2>Webhooks</h2>
-  
-  <% if @webhooks.present? %>
-    <ul>
-      <% @webhooks.each do |webhook| %>
-        <li><%= webhook.topic %> : <%= webhook.address %></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
-  <% end %>
-  </div>    
+      <%= yield %>
+    </div>    
   </div><!--/row-->
 
   <footer class="text-center" style="position:absolute; bottom:0px;">
@@ -55,4 +40,5 @@
   </footer>
 
 </div> <!-- /container -->
-  
+  </body>
+</html>
