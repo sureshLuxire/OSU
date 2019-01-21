@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'shopify_api'
 #See https://devcenter.heroku.com/articles/ruby-versions for mor
 gem 'shopify_app'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
