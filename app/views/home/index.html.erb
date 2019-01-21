@@ -1,33 +1,6 @@
-<% content_for :javascript do %>
-  <script type="text/javascript">
-    ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({ title: "Home" });
-    });
-  </script>
-<% end %>
-<div class='container'>
-<div class='row'>
-<h2>Products</h2>
-
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
-  <% end %>
-</ul>
-
-
-<hr>
-
-<h2>Webhooks</h2>
-
-<% if @webhooks.present? %>
-  <ul>
-    <% @webhooks.each do |webhook| %>
-      <li><%= webhook.topic %> : <%= webhook.address %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
-<% end %>
-</div>
+<div class="text-center">
+<a href="orders/index" class="btn btn-primary" title='Click to open..'>
+<h2 class="text-center"><%= @title %></h2>
+<p class="text-center">Welcome To Shopify Application</p>
+</a>
 </div>
