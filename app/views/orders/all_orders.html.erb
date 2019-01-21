@@ -1,0 +1,27 @@
+
+  <h2><%=@title%></h2>
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Order</th>
+        <th>Date</th>
+        <th>Customer</th>
+        <th>Payment Status</th>
+        <th>Fullfillment Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>#33320</td>
+        <td>02/12/2019</td>
+        <td>Steve Leventhal</td>
+        <tdAuthorized</td>
+        <td>Unfullfilled</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class='text-right'><%= link_to '', orders_index_path, :class => 'glyphicon glyphicon-circle-arrow-left font-size', :title => 'Go Back' %></p>
+  </div>

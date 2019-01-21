@@ -1,0 +1,33 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home_header{
+
+    background: #068c6f !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+
+}
+@media(max-width:768px){
+.btn-top{
+    margin-top:10px;
+}
+}
+
+p {
+    margin: 0 0 0px;
+}
+
+a {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #337ab7 !important;
+    text-decoration: none !important;
+}
+
+.font-size{
+    font-size: 20pt;
+}
