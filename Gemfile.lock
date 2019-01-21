@@ -239,7 +239,6 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver
-  shopify_api
   shopify_app
   sqlite3
   turbolinks (~> 5)
