@@ -1,5 +1,3 @@
-
-
 <% content_for :javascript do %>
   <script type="text/javascript">
     ShopifyApp.ready(function(){
@@ -9,6 +7,14 @@
 <% end %>
 <div class='container'>
 <div class='row'>
+
+<div class="text-center">
+<a href="orders/index" title="Click Here" class="btn btn-primary">
+<h2>ORDER STATUS UPDATE</h1>
+<p>Welcome To Shopify Application</p>
+</a>
+</div>
+
 <h2>Products</h2>
 
 <ul>
@@ -16,10 +22,7 @@
     <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
   <% end %>
 </ul>
-
-
 <hr>
-
 <h2>Webhooks</h2>
 
 <% if @webhooks.present? %>
