@@ -1,7 +1,7 @@
 ShopifyApp.configure do |config|
   config.application_name = "ORDER STATUS UPDATE"
-  config.api_key = "bbb6140c713eb9afce5f9d730cd1a00a"
-  config.secret = "d8089c06b6b4f7416084c2d2ca8cd1a2"
+  config.api_key = "cf485dd60704e00626c3ef79bb2902f9"
+  config.secret = "5a086c21e6d91dfdf2650f8f42f4c352"
   config.scope = "read_products, write_products, read_orders, write_orders" 
   # Consult this page for more scope options:
   # https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
