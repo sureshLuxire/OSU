@@ -3,7 +3,7 @@
     ShopifyApp.ready(function(){
       ShopifyApp.Bar.initialize({ title: "Home" });
     });
-  </script>
+</script>
 <% end %>
 <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
 <div class='container'>
@@ -15,6 +15,14 @@
 <p style="color:#fff;">Welcome To Shopify Application</p>
 </a>
 </div>
+<h2>Products</h2>
+
+<ul>
+  <% @orders.each do |order| %>
+    <li><%= link_to order.id, "https://#{@shop_session.url}/admin/orders/#{order.id}", target: "_top" %></li>
+  <% end %>
+</ul>
+<hr>
 
 <h2>Products</h2>
 
