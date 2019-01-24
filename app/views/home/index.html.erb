@@ -37,8 +37,6 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.name %></td>
-        <td><%= order.total %></td>
-        <td><%= order.line_item_count %></td>
         <td><%= order.financial_status %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
