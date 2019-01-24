@@ -17,37 +17,31 @@
 </div>
 <h2>Orders</h2>
 
-<p id="notice"><%= notice %></p>
+<ul>
+  <% @orders.each do |order| %>
+    <li><%= link_to order.name, "https://#{@shop_session.url}/admin/orders/#{order.name}", target: "_top" %></li>
+  <% end %>
+</ul>
+<hr>
 
-<h1>Orders</h1>
+<h2>Products</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Email</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Shopify order</th>
-      <th>Order date</th>
-      <th>Total</th>
-      <th>Line item count</th>
-      <th>Financial status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
+  <% end %>
+</ul>
+<hr>
+<h2>Webhooks</h2>
 
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.name %></td>
-        <td><%= order.financial_status %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% if @webhooks.present? %>
+  <ul>
+    <% @webhooks.each do |webhook| %>
+      <li><%= webhook.topic %> : <%= webhook.address %></li>
     <% end %>
-  </tbody>
-</table>
-
-
+  </ul>
+<% else %>
+  <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
+<% end %>
+</div>
+</div>
