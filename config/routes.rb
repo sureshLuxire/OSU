@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #root 'dashboard#index'
   get 'home/index'
   get 'dashboard/index'
-
+  
+  resources :orders
 
 end
