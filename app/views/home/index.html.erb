@@ -16,40 +16,6 @@
 </a>
 </div>
 
-<h1>Orders</h1>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Order</th>
-      <th>Date</th>
-      <th>Customer</th>
-      <th>Payment Status</th>
-      <th>Fulfillment Status</th>
-      <th>Total</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.name %></td>
-        <td><%= order.created_at %></td>
-        <td><%= order.email %></td>
-        <td><%= order.financial_status %></td>
-        <td>
-        <% if order.fulfillment_status %>
-           <%= order.fulfillment_status %>
-           <% else %>
-           Unfulfilled
-           <% end %>
-        </td>
-        <td><%= order.total_price %></td>        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 </div>
 </div>
