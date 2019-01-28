@@ -1,9 +1,16 @@
+<% content_for :javascript do %>
+    <script type="text/javascript">
+      ShopifyApp.ready(function(){
+        ShopifyApp.Bar.initialize({ title: "Products" });
+      });
+  </script>
+  <% end %>
 <div class="text-center" style="margin-top:5%;">
 <div class="btn btn-primary">
 <h2 style="color:#fff;">Products Process Underway..</h2>
 <p style="color:#fff;">Welcome To Shopify Application</p>
 </div>
 </div>
-<p class='text-right'><%= link_to '', home_index_path, :class => 'glyphicon glyphicon-circle-arrow-left font-size', :title => 'Go Back' %></p>
+<p class='text-right go-back'><%= link_to '', home_index_path, :class => 'glyphicon glyphicon-circle-arrow-left font-size', :title => 'Go Back' %></p>
 
   
