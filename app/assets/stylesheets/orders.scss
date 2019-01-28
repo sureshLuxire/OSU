@@ -8,12 +8,18 @@
     text-transform: uppercase !important;
 
 }
+.search-bar{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 @media(max-width:768px){
 .btn-top{
     margin-top:10px;
 }
 }
-
+.go-back a:hover{
+    text-decoration: none !important;
+}
 p {
     margin: 0 0 0px;
 }
