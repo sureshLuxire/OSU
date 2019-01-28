@@ -39,12 +39,12 @@
         <td><%= order.email %></td>
         <td><%= order.financial_status %></td>
         <td><% if order.fulfillment_status %>
-           Unfulfilled
-           <% else %>
            <%= order.fulfillment_status %>
+           <% else %>
+           Unfulfilled
            <% end %>
-          </td>
-        <td><%= order.total_price %></td>        
+      </td>
+      <td><%= order.total_price %></td>        
       </tr>
     <% end %>
   </tbody>
