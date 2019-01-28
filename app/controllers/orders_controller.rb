@@ -15,7 +15,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    @order = ShopifyAPI::Order.new
   end
 
   # GET /orders/1/edit
@@ -25,7 +25,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    @order = ShopifyAPI::Order.new(order_params)
 
     respond_to do |format|
       if @order.save
@@ -65,11 +65,11 @@ class OrdersController < ShopifyApp::AuthenticatedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:id])
+      @order = ShopifyAPI::Order.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:number, :email, :first_name, :last_name, :shopify_order_id, :order_date, :total, :line_item_count, :financial_status)
+      params.require(:order).permit(:name, :email, :first_name, :last_name, :shopify_order_id, :order_date, :total, :line_item_count, :financial_status)
     end
 end
