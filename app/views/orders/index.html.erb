@@ -31,7 +31,7 @@
       <tr>
         <td><%= order.name %></td>
         <td><%= order.created_at %></td>
-        <td><%= order.customer.first_name order.customer.last_name %></td>
+        <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
         <td><%= order.financial_status %></td>
         <td><% if order.fulfillment_status %>
            <%= order.fulfillment_status %>
