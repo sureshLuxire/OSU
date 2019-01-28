@@ -38,7 +38,7 @@
            <% else %>
            Unfulfilled
            <% end %></td>
-      <td><%= order.orders_count %></td>
+      <td><%= order.customer.first_name %></td>
       <td><%= order.total_price %></td>        
       </tr>
     <% end %>
