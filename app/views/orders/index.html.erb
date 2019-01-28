@@ -34,17 +34,16 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.name %></td>
-        <td><%= order.created_at %></td>
-        <td><%= order.email %></td>
-        <td><%= order.financial_status %></td>
-        <td><% if order.fulfillment_status == null %>
-           Unfulfilled
-           <% else %>
-           <%= order.fulfillment_status %>
-           <% end %>
-          </td>
-        <td><%= order.total_price %></td>        
+      <td><%= order.order_number %></td>
+      <td>cust</td>
+      <td><%= order.shipping_address.city %></td>
+      <td>total</td>
+      <td><%= order.created_at %></td>
+      <td><%= order.subtotal_price %></td>
+      <td><%= order.total_tax %></td>
+      <td><%= order.shipping_lines %></td>
+      <td><%= order.payment_gateway_names %></td>
+      <td><%= order.fulfillment_status %></td>
       </tr>
     <% end %>
   </tbody>
