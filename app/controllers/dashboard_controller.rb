@@ -1,4 +1,4 @@
-class DashboardController < ShopifyApp::AuthenticatedController  
+class DashboardController < ApplicationController  
   def index
     @title = 'Order Status Update'
     
