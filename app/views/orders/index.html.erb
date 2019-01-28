@@ -38,7 +38,12 @@
         <td><%= order.created_at %></td>
         <td><%= order.email %></td>
         <td><%= order.financial_status %></td>
-        <td><%= order.fulfillment_status %></td>
+        <td><% if order.fulfillment_status == null %>
+           Unfulfilled
+           <% else %>
+           <%= order.fulfillment_status %>
+           <% end %>
+          </td>
         <td><%= order.total_price %></td>        
       </tr>
     <% end %>
