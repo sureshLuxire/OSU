@@ -47,5 +47,12 @@
 </table>
 </div>
 </div>
+
+<script>
+//var d = {{order.created_at}};
+  var n = moment("{{order.created_at}}").format('MMMM Do, h:mm:ss a');
+  document.getElementById("date").innerHTML = n;
+</script>
+
 </div>
 
