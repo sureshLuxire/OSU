@@ -37,7 +37,13 @@
     bottom: 0px;
     position:fixed;
   }
-  
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #09a6ba !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: #000 !important;
+      background: #333 !important;
+  } 
   .navbar-default {
     background-color: #09a6ba !important;
     border-color: #0b8699 !important;
