@@ -10,9 +10,14 @@
     
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" %>
-  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" %>
-  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" %>
+  <%= javascript_include_tag "app\assets\javascripts\moments.min.js" %>
+  <%= javascript_include_tag "app\assets\javascripts\moments.js" %>
   <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" %>
+  <script      
+  var d = {{order.created_at}};
+  var n = moment(d).format('MMMM Do, h:mm:ss a');
+  document.getElementById("date").innerHTML = n;     
+</script>
   </head>
 
   <body>
