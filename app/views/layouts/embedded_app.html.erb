@@ -10,6 +10,8 @@
     
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" %>
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" %>
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" %>
   <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" %>
   </head>
 
@@ -72,6 +74,13 @@
           });
         });
       });
+    </script>
+    <script>
+      function myFunction() {
+        //var d = new Date();
+        var n = moment("{{order.created_at}}").format('MMMM Do, h:mm:ss a');
+        document.getElementById("date").innerHTML = n;
+      }
     </script>
  </body>
 </html>
