@@ -49,7 +49,7 @@
 </div>
 
 <script>
-  var d = '{{order.created_at}}';
+  var d = new date();
   var n = moment(d).format('MMMM Do, h:mm:ss a');
   document.getElementById('order-date').innerHTML = n;
 </script>
