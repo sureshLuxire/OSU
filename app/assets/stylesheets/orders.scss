@@ -30,7 +30,10 @@ footer{
 p {
     margin: 0 0 0px;
 }
-
+.navbar-default .navbar-toggle {
+    border-color: #b6b1b1 !important;
+    background: #000 !important;
+}
 .nav a {
     color: #000 !important;
     text-decoration: none;
