@@ -4,52 +4,14 @@
       ShopifyApp.Bar.initialize({ title: "Orders" });
     });
 </script>
-<%= javascript_include_tag "https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" %>
 <script>
-  // init Isotope
-  var $grid = $('.uploads-row').isotope({
-    itemSelector: '.col-media',
-    layoutMode: 'fitRows',
-    getSortData: {
-      fileby:   '.file-by',
-      filename: '.file-name',
-      filedate: '[data-ticks]',
-      filesize: function( itemElem ) {
-        var filesize = $( itemElem ).attr('data-filesize');
-        return parseInt( filesize );
-      }
-    }
+$(document).ready(function () {
+  $('#date_Order_desc').DataTable({
+  "order": [[ 3, "desc" ]]
   });
-
-  // bind filter button click
-  $('.filters-button-group').on('click', 'button', function () {
-    var filterValue = $(this).attr('data-filter');
-    $grid.isotope({ filter: filterValue });
+  $('.dataTables_length').addClass('bs-select');
   });
-
-  // bind sort button click
-  $('.sort-button-group').on( 'click', 'button', function() {
-
-    /* Get the element name to sort */
-    var sortValue = $(this).attr('data-sort-value');
-
-    /* Get the sorting direction: asc||desc */
-    var direction = $(this).attr('data-sort-direction');
-
-    /* convert it to a boolean */
-    var isAscending = (direction == 'asc');
-    var newDirection = (isAscending) ? 'desc' : 'asc';
-
-    /* pass it to isotope */
-    $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
-
-    $(this).attr('data-sort-direction', newDirection);
-
-    var span = $(this).find('.glyphicon');
-    span.toggleClass('glyphicon-chevron-up glyphicon-chevron-up');
-
-  });
-  </script>
+</script>
 <% end %>
 <div class='container'>
 <div class='row'>
@@ -59,12 +21,12 @@
 <div class='search-bar'>
 <input class="form-control" id="myInput" type="text" placeholder="Search Order..">
 </div>
-<div class="table-responsive uploads-row">
-<table class="table table-striped">
+<div class="table-responsive">
+<table class="table table-striped" id="date_order_desc_asc">
   <thead>
     <tr>
       <th>Order</th>
-      <th><button data-sort-direction="desc" data-sort-value="filedate" type="button">Date <span aria-hidden="true" class="glyphicon glyphicon-chevron-down"></span></button></th>
+      <th class="th-sm">Date</th>
       <th>Customer</th>
       <th>Payment Status</th>
       <th>Fulfillment Status</th>
