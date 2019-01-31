@@ -31,7 +31,7 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.name %></td>
-        <td class="file-date"><%= order.created_at %></td>
+        <td><%= order.created_at %></td>
         <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
         <td><%= order.financial_status %></td>
         <td><% if order.fulfillment_status %>
@@ -39,7 +39,7 @@
            <% else %>
            Unfulfilled
            <% end %></td>  
-      <td><%= order.customer.line_items %></td>    
+      <td><%= order.line_items %></td>    
       <td><%= order.total_price %></td>        
       </tr>
     <% end %>
