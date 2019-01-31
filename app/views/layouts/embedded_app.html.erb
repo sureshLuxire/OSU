@@ -65,11 +65,19 @@
       </div>
     <% end %>
     <script>
-        $(document).ready(function (){
-          var table = $('#row-expand').DataTable({
-              'responsive': true
+      $(document).ready(function(){        
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
           });
-        });      
+        });
+
+        var table = $("#row-expand").DataTable({
+        "responsive": true
+        });
+
+      });      
     </script>
 </body>
 </html>
