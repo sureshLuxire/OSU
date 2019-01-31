@@ -38,8 +38,7 @@
            <%= order.fulfillment_status %>
            <% else %>
            Unfulfilled
-           <% end %></td>  
-      <td><%= order.line_items %></td>    
+           <% end %></td>     
       <td><%= order.total_price %></td>        
       </tr>
     <% end %>
@@ -48,6 +47,25 @@
 </div>
 </div>
 
+<script>
+$(document).ready(function (){
+	//$('#example').DataTable();
+    var table = $('#row-expand').DataTable({
+        'responsive': true
+    });
 
+    // Handle click on "Expand All" button
+    $('#btn-show-all-children').on('click', function(){
+        // Expand row details
+        table.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
+    });
+
+    // Handle click on "Collapse All" button
+    $('#btn-hide-all-children').on('click', function(){
+        // Collapse row details
+        table.rows('.parent').nodes().to$().find('td:first-child').trigger('click');
+    });
+});
+</script>
 </div>
 
