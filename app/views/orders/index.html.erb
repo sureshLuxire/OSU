@@ -31,7 +31,7 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.name %></td>
-        <td><span id="order-date"></span></td>
+        <td><%= order.created_at %></td>
         <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
         <td><%= order.financial_status %></td>
         <td><% if order.fulfillment_status %>
@@ -48,11 +48,6 @@
 </div>
 </div>
 
-<script>
-  var d = new date();
-  var n = moment(d).format('MMMM Do, h:mm:ss a');
-  document.getElementById('order-date').innerHTML = n;
-</script>
 
 </div>
 
