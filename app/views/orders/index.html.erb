@@ -21,9 +21,12 @@
             <th>Payment Status</th>
             <th>Fulfillment Status</th>
             <th>Total</th>
+            <th class="none">Product ID</th>
             <th class="none">Product Name</th>
             <th class="none">SKU</th>
-            <th class="none">Product ID</th>            
+            <th class="none"></th>
+            <th class="none"></th>
+            <th class="none"></th>                       
         </tr>
     </thead>
     <tbody>
@@ -41,6 +44,9 @@
           <td><%= order.total_price %></td> 
           <% @products.each do |product| %>
             <td><%= product.id %></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
           <%end%>                           
