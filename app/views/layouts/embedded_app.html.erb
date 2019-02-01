@@ -65,6 +65,9 @@
       </div>
     <% end %>
     <script>
+    var n = moment("2019-01-29T15:13:04-05:00").format('MMMM Do, h:mm:ss a');
+    document.getElementById("order_date").innerHTML = n;
+    
       $(document).ready(function(){        
         $("#myInput").on("keyup", function() {
           var value = $(this).val().toLowerCase();
