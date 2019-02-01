@@ -22,7 +22,7 @@
             <th>Fulfillment Status</th>
             <th>Total</th>
             <th class="none">Product ID</th>
-            <th class="none">Product Name</th>
+            <th class="none">Line ItemsProduct Name</th>
             <th class="none">SKU</th>
             <th class="none"></th>
             <th class="none"></th>
@@ -43,11 +43,14 @@
              <% end %></td>     
           <td><%= order.total_price %></td>         
           <td></td>
-          <td>{% for tag in order.tags %}
-          {{ tag }}
-          {% endfor %}
+          <td>
+          <ul>
+            <% for line in fulfillment.fulfillment_line_items %>
+           <li>{{ line.line_item.title }} x {{ line.quantity }}</li>
+           <% endfor %>
+          </ul>
           </td>
-          <td><% order.total_discounts %></td>
+          <td><% order.line_item.id %></td>
           <td></td>
           <td></td>
           <td></td>                           
