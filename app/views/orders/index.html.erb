@@ -44,13 +44,13 @@
           <td>
           <select>
             <% for value in order.fulfillment_status %>
-                <option><% if order.fulfillment_status == true %}selected{% endif %>
+                <option><% if order.fulfillment_status == true %>selected<% endif %>
                 Unfullfilled
                 </option>
-                <option><% if order.fulfillment_status == true %}selected{% endif %>
+                <option><% if order.fulfillment_status == true %>selected<% endif %>
                 Partial
                 </option>
-                <option><% if order.fulfillment_status == true %}selected{% endif %>
+                <option><% if order.fulfillment_status%>selected<% endif %>
                 Fulfilled
                 </option>
             <% endfor %>
@@ -60,7 +60,7 @@
           <td id='order_date'>
           <span class="glyphicon glyphicon-info-sign"></span>               
           </td> 
-          <td><%=  %></td>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
