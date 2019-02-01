@@ -20,7 +20,6 @@
             <th>Customer</th>
             <th>Payment Status</th>
             <th>Fulfillment Status</th>
-            <th>Fulfillment Items</th>
             <th>Total</th>
             <th class="none">Product ID</th>
             <th class="none">Product Name</th>
@@ -42,10 +41,26 @@
              <% else %>
              Unfulfilled
              <% end %>
-          </td>
-          <td><%= order.note %></td>     
+          </td>              
           <td><%= order.total_price %></td>         
-          <td id='order-date'></td> 
+          <td><span id='order-date'></span> 
+          <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-info-sign"></span>
+          </a>
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">    
+                    <!-- Modal content-->
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                        <%= order.note %>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+          </td> 
           <td></td>
           <td></td>
           <td></td>
@@ -57,6 +72,8 @@
 </table>
 </div>
 
+
+
 <script>
     
         var n = moment("2019-01-29T15:13:04-05:00").format('MMMM Do, h:mm:ss a');
@@ -67,6 +84,10 @@
         var table = $("#row-expand").DataTable({
             "responsive": true
         });
+
+        $("#myBtn").click(function(){
+        $("#myModal").modal();
+  });
     });
 </script> 
   
