@@ -45,12 +45,12 @@
           <td></td>
           <td>
           <ul>
-            <% for line in order.fulfillment.fulfillment_line_items %>
+            {% for line in order.fulfillment.fulfillment_line_items %}
            <li>{{ line.line_item.title }} x {{ line.quantity }}</li>
-           <% endfor %>
+           {% endfor %}
           </ul>
           </td>
-          <td><% order.line_item.title %></td>
+          <td><% order.line_item %></td>
           <td></td>
           <td></td>
           <td></td>                           
