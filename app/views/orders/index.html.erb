@@ -35,11 +35,26 @@
           <td><%= order.created_at %></td>
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
-          <td><% if order.fulfillment_status %>
+          <!--<td><% if order.fulfillment_status %>
              <%= order.fulfillment_status %>
              <% else %>
              Unfulfilled
              <% end %>
+          </td>-->
+          <td>
+          <select>
+            <% for value in order.fulfillment_status %>
+                <option><% if order.fulfillment_status == true %}selected{% endif %>
+                Unfullfilled
+                </option>
+                <option><% if order.fulfillment_status == true %}selected{% endif %>
+                Partial
+                </option>
+                <option><% if order.fulfillment_status == true %}selected{% endif %>
+                Fulfilled
+                </option>
+            <% endfor %>
+            </select>
           </td>              
           <td><%= order.total_price %></td>         
           <td id='order_date'>
