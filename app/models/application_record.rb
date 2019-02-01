@@ -1,4 +1,4 @@
 class ApplicationRecord < ActiveRecord::Base
-  #include ShopifyApp::SessionStorage
+  include ShopifyApp::SessionStorage
   self.abstract_class = true  
 end
