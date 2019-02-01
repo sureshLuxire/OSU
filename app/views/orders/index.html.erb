@@ -30,8 +30,7 @@
         </tr>
     </thead>
     <tbody class='myTable'>
-      <% @orders.each do |order| %>
-        <% @products.each do |product| %>
+      <% @orders.each do |order| %>        
         <tr>
           <td><%= order.name %></td>
           <td><%= order.created_at %></td>
@@ -43,14 +42,16 @@
              Unfulfilled
              <% end %></td>     
           <td><%= order.total_price %></td>         
-          <td><%= product.id %></td>
           <td></td>
-          <td></td>
+          <td>{% for tag in order.tags %}
+          {{ tag }}
+          {% endfor %}
+          </td>
+          <td><% order.total_discounts %></td>
           <td></td>
           <td></td>
           <td></td>                           
         </tr>
-      <% end %>
       <% end %>
     </tbody>
 </table>
