@@ -39,9 +39,11 @@
              Unfulfilled
              <% end %></td>     
           <td><%= order.total_price %></td> 
-          <td><%= product.id %></td>
-          <td></td>
-          <td></td>                           
+          <% @products.each do |product| %>
+            <td><%= product.id %></td>
+            <td></td>
+            <td></td>
+          <%end%>                           
         </tr>
       <% end %>
     </tbody>
