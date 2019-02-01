@@ -1,3 +1,3 @@
 class Order < ApplicationRecord
-    #include ShopifyApp::SessionStorage
+    include ShopifyApp::SessionStorage
 end
