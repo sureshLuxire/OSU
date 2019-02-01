@@ -5,7 +5,8 @@
       });
     </script>
   <% end %>
-
+  <%= javascript_include_tag "https://momentjs.com/downloads/moment.js" %>
+  <%= javascript_include_tag "https://momentjs.com/downloads/moment-with-locales.js" %>
 <div class='col-lg-12' style="margin-bottom:20px;">
 <span class='h1 text-left' style="display:inline !important;">Orders</span>
 <span class='text-right go-back'><%= link_to '', home_index_path, :class => 'glyphicon glyphicon-circle-arrow-left font-size', :title => 'Go Back' %></span>
@@ -44,7 +45,7 @@
           </td>              
           <td><%= order.total_price %></td>         
           <td><span id='order-date'></span> 
-          <a href="#" class="btn btn-info btn-lg">
+          <a id="myBtn" >
           <span class="glyphicon glyphicon-info-sign"></span>
           </a>
                 <div class="modal fade" id="myModal" role="dialog">
