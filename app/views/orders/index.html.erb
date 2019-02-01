@@ -45,14 +45,10 @@
           </td>
           <td><%= order.fulfillment.fulfillment_line_items %></td>     
           <td><%= order.total_price %></td>         
-          <td>
-          <% @products.each do |product| %>
-            <ul>
-            <li><%= order.product.variant_id %></li>
-            </ul>
-          <% end %>  
+          <td>        
+                 
           </td> 
-          <td>order.product.id</td>
+          <td><%= order.product.id %></td>
           <td></td>
           <td></td>
           <td></td>
