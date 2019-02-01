@@ -43,9 +43,9 @@
              Unfulfilled
              <% end %>
           </td>
-          <td><%= order.notes %></td>     
+          <td><%= order.note %></td>     
           <td><%= order.total_price %></td>         
-          <td></td> 
+          <td id='order-date'></td> 
           <td></td>
           <td></td>
           <td></td>
@@ -58,7 +58,12 @@
 </div>
 
 <script>
-    $(document).ready(function (){
+    
+        var n = moment("2019-01-29T15:13:04-05:00").format('MMMM Do, h:mm:ss a');
+        document.getElementById("order-date").innerHTML = n;
+
+    $(document).ready(function (){       
+
         var table = $("#row-expand").DataTable({
             "responsive": true
         });
