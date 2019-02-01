@@ -20,6 +20,7 @@
             <th>Customer</th>
             <th>Payment Status</th>
             <th>Fulfillment Status</th>
+            <th>Fulfillment Items</th>
             <th>Total</th>
             <th class="none">Product ID</th>
             <th class="none">Line ItemsProduct Name</th>
@@ -40,14 +41,16 @@
              <%= order.fulfillment_status %>
              <% else %>
              Unfulfilled
-             <% end %></td>     
+             <% end %>
+          </td>
+          <td><%= order.fulfillment.fulfillment_line_items %></td>     
           <td><%= order.total_price %></td>         
           <td></td>
           <td>
           <ul>
-            {% for line in order.fulfillment.fulfillment_line_items %}
-           <li>{{ line.line_item.title }} x {{ line.quantity }}</li>
-           {% endfor %}
+            <% for order in fulfillment.fulfillment_line_items %>
+           <li><% order.line_item.title %> x <% order.quantity  %></li>
+           <% endfor %>
           </ul>
           </td>
           <td><% order.line_item %></td>
