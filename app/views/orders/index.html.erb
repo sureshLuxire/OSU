@@ -45,15 +45,17 @@
           </td>
           <td><%= order.fulfillment.fulfillment_line_items %></td>     
           <td><%= order.total_price %></td>         
-          <td></td>
           <td>
-          <ul>
-            <% for order in fulfillment.fulfillment_line_items %>
-           <li><% order.line_item.title %> x <% order.quantity  %></li>
-           <% endfor %>
-          </ul>
+          <% @products.each do |product| %>
+            <ul>
+            <li><%= product.title %></li>
+            </ul>
+          <% end %>  
+          </td> 
+          <td>
+          
           </td>
-          <td><% order.line_item %></td>
+          <td><% order.fulfillment.item_count %></td>
           <td></td>
           <td></td>
           <td></td>                           
