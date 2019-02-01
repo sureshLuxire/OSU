@@ -23,7 +23,7 @@
             <th>Fulfillment Items</th>
             <th>Total</th>
             <th class="none">Product ID</th>
-            <th class="none">Line ItemsProduct Name</th>
+            <th class="none">Product Name</th>
             <th class="none">SKU</th>
             <th class="none"></th>
             <th class="none"></th>
@@ -43,12 +43,10 @@
              Unfulfilled
              <% end %>
           </td>
-          <td></td>     
+          <td><%= order.notes %></td>     
           <td><%= order.total_price %></td>         
-          <td>        
-                 
-          </td> 
-          <td><%= order.note %></td>
+          <td></td> 
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
