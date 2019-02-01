@@ -42,8 +42,8 @@
              <% end %>
           </td>              
           <td><%= order.total_price %></td>         
-          <td><span id='order_date'></span> 
-          <span class="glyphicon glyphicon-info-sign myBtn"></span>               
+          <td id='order_date'>
+          <span class="glyphicon glyphicon-info-sign"></span>               
           </td> 
           <td></td>
           <td></td>
@@ -63,15 +63,10 @@
         var n = moment("2019-01-29T15:13:04-05:00").format('MMMM Do, h:mm:ss a');
         document.getElementById("order_date").innerHTML = n;
 
-    $(document).ready(function (){       
-
+    $(document).ready(function (){
         var table = $("#row-expand").DataTable({
             "responsive": true
-        });
-
-        $(".myBtn").click(function(){
-        $(".myModal").modal();
-        });
+        });        
     });
 </script> 
   
