@@ -6,7 +6,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
   def index
     #@orders = Order.all
     @orders = ShopifyAPI::Order.find(:all, params: { limit: 500 })
-    @product = ShopifyAPI::Product.find(:all)
+    @products = ShopifyAPI::Product.find(:all)
     #@product = ShopifyAPI::Product.find(params[:id])
   end
 
