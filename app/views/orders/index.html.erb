@@ -45,7 +45,13 @@
           <td><%= order.id %>
           <span class="glyphicon glyphicon-info-sign"></span>               
           </td> 
-          <td></td>
+          <td>
+          <% @products.each do |product| %>
+          <tr>
+          <%= product.id %>
+          </tr>
+          <%end%>
+          </td>
           <td></td>
           <td></td>
           <td></td>
