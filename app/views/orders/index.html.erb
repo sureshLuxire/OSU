@@ -47,12 +47,11 @@
           </td>
           <td>
           <ul>
-          <% for item in order.line_items %>
-          <% for properties in item.properties %>
+          <% for item in order.line_items %>          
           <li><%= item.variant_id %></li>
           </ul>
           <%endfor%>
-          <%endfor%>
+          
           </td>
           <td></td>
           <td></td>
