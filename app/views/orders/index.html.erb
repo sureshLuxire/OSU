@@ -46,9 +46,13 @@
           <span class="glyphicon glyphicon-info-sign"></span>               
           </td>
           <td>
-          
-          <%= order.line_items %>
-          
+          <ul>
+          <% for item in order.line_items %>
+          <% for properties in item.properties %>
+          <li><%= item.variant_id %></li>
+          </ul>
+          <%endfor%>
+          <%endfor%>
           </td>
           <td></td>
           <td></td>
