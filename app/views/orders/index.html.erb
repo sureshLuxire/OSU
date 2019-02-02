@@ -42,7 +42,7 @@
              <% end %>
           </td>
           <td>
-          <% if order.tags == null %>
+          <% if order.tags != "" %>
              <%= order.tags %>
              <% else %>
              No Made
@@ -53,15 +53,15 @@
           <span class="glyphicon glyphicon-info-sign"><%= order.note %></span>               
           </td>
           <td>
-          <% order.line_items.each do |item| %> 
-          
+          <% for item in order.line_items %> 
+          <% for property in item.properties %> 
           <ul class="list-group">                   
-          <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= order.product_id %></li>
+          <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= property.value %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
           <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : <%= item.price %></li>
           </ul>
-          
-          <%end%>        
+          <%endfor%>
+          <%endfor%>        
           
           </td>
           <td></td>
