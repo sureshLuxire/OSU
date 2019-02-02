@@ -42,11 +42,11 @@
              <% end %>
           </td>
           <td>
-          <% @orders.each do |order| %>         
+          <% do |order| %>         
              <select>
              <option><%= order.tags %></option>
              </select>
-             <%end%>                          
+          <%end%>                          
           </td>              
           <td><%= order.total_price %></td>         
           <td><%= order.id %>
