@@ -44,16 +44,21 @@
           <td><%= order.total_price %></td>         
           <td><%= order.id %><span class="glyphicon glyphicon-info-sign"></span></td> 
           <td>
+          <% @products.each do |product| %> 
           <tr>
-          <td><%= @prodcut.title %></td>
+          <td><% @product.images.each do |image| %>
+            <img src="<%=  image.src%>" alt="<%=@product.title%>">
+          <% end %></td>
+          <td><%= prodcut.title %></td>
           </tr>
+          <%end%>
           </td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>                           
         </tr>
-      <% end %>
+      <%end%>
     </tbody>
 </table>
 </div>
