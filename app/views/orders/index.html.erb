@@ -53,15 +53,15 @@
           <span class="glyphicon glyphicon-info-sign"><%= order.note %></span>               
           </td>
           <td>
-          <% for item in order.line_items %> 
-          <% for property in item.properties %> 
+          <% order.line_items.each do |item| %> 
+          <% item.properties.each do |property| %> 
           <ul class="list-group">                   
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= property.value %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
           <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : <%= item.price %></li>
           </ul>
-          <%endfor%>
-          <%endfor%>        
+          <%end%>
+          <%end%>        
           
           </td>
           <td></td>
