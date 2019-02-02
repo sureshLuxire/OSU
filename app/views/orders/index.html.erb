@@ -47,10 +47,10 @@
           </td>
           <td>
           <ul>
-          <% for item in order.line_items %>          
+          <% order.line_items.each do |item| %>          
           <li><%= item.variant_id %></li>
-          </ul>
-          <%endfor%>
+          <%end%>
+          </ul>        
           
           </td>
           <td></td>
