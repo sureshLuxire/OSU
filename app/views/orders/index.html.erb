@@ -53,11 +53,11 @@
           <td>
           <% order.line_items.each do |item| %>  
           <ul class="list-group">
-          <% item.properties.each do |property| %>                   
+          #<% item.properties.each do |property| %>                   
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
           <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : <%= item.price %></li>
-          <%end%>
+          #<%end%>
           </ul>          
           <%end%>        
           
