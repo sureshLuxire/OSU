@@ -20,12 +20,12 @@
             <th>Payment Status</th>
             <th>Fulfillment Status</th>
             <th>Total</th>
-            <th class="none">Order ID</th>
-            <th class="none">Product Title</th>
-            <th class="none">SKU</th>
-            <th class="none"></th>
-            <th class="none"></th>
-            <th class="none"></th>                       
+            <th class="none">Order ID:</th>
+            <th class="none">Variant ID:</th>
+            <th class="none">Variant Name:</th>
+            <th class="none">Total Quantity:</th>
+            <th class="none">Total Price:</th>
+            <th class="none">Variant Title:</th>                       
         </tr>
     </thead>
     <tbody class='myTable'>
@@ -44,14 +44,14 @@
           <td><%= order.total_price %></td>         
           <td><%= order.id %>
           <span class="glyphicon glyphicon-info-sign"></span>               
-          </td> 
-          <td>
-          <%= order.line_items %>          
           </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>                           
+          <% @lineItems.each do |item| %> 
+          <td><%= item.variant_id %></td>
+          <td><%= item.title %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.price %></td>
+          <td><%= item.variant_title %></td>                 
+          <%end%>          
         </tr>
       <% end %>
     </tbody>
