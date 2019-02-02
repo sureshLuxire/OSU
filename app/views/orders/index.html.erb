@@ -53,7 +53,7 @@
           <span class="glyphicon glyphicon-info-sign"><%= order.note %></span>               
           </td>
           <td>
-          <% for item in order.line_items %> 
+          <% order.line_items.each do |item| %> 
           
           <ul class="list-group">                   
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= order.product_id %></li>
@@ -61,7 +61,7 @@
           <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : <%= item.price %></li>
           </ul>
           
-          <%endfor%>        
+          <%end%>        
           
           </td>
           <td></td>
