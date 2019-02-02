@@ -45,11 +45,10 @@
           <td><%= order.id %>
           <span class="glyphicon glyphicon-info-sign"></span>               
           </td>
-          
           <td>
-          <% @lineItems.each do |item| %> 
-          <%= item.variant_id %>
-          <%end%>
+          <% for line_item in order.line_items %>
+          <%= line_item.variant_id %>
+          <%endfor%>
           </td>
           <td></td>
           <td></td>
