@@ -46,11 +46,12 @@
           <span class="glyphicon glyphicon-info-sign"></span>               
           </td>
           <td>
-          <ul>
-          <% order.line_items.each do |item| %>          
+          <% order.line_items.each do |item| %> 
+          <ul>                   
           <li><%= item.variant_id %></li>
-          <%end%>
-          </ul>        
+          
+          </ul>
+          <%end%>        
           
           </td>
           <td></td>
