@@ -41,12 +41,11 @@
              Unfulfilled
              <% end %>
           </td>
-          <td>
-          <% do |order| %>         
+          <td>                   
              <select>
+             <option>No Made</option>
              <option><%= order.tags %></option>
-             </select>
-          <%end%>                          
+             </select>                                    
           </td>              
           <td><%= order.total_price %></td>         
           <td><%= order.id %>
