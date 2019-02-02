@@ -19,13 +19,13 @@
             <th>Customer</th>
             <th>Payment Status</th>
             <th>Fulfillment Status</th>
+            <th>Shopify Status</th>
             <th>Total</th>
             <th class="none">Order ID:</th>
             <th class="none">Variant ID:</th>
-            <th class="none">Variant Name:</th>
-            <th class="none">Total Quantity:</th>
-            <th class="none">Total Price:</th>
-            <th class="none">Variant Title:</th>                       
+            <th class="none"></th>
+            <th class="none"></th>
+            <th class="none"></th>                      
         </tr>
     </thead>
     <tbody class='myTable'>
@@ -40,16 +40,19 @@
              <% else %>
              Unfulfilled
              <% end %>
-          </td>              
+          </td>
+          <td><%= order.tags %></td>              
           <td><%= order.total_price %></td>         
           <td><%= order.id %>
           <span class="glyphicon glyphicon-info-sign"></span>               
           </td>
           <td>
           <% order.line_items.each do |item| %> 
-          <ul>                   
-          <li><%= item.variant_id %></li>
-          
+          <ul class="list-group">                   
+          <li class="list-group-item">Variant Id : <%= item.variant_id %></li>
+          <li class="list-group-item">Variant Title : <%= item.title %></li>
+          <li class="list-group-item">Variant SKU : <%= item.sku %></li>
+          <li class="list-group-item">Total Quantity : <%= item.quantity %></li>
           </ul>
           <%end%>        
           
