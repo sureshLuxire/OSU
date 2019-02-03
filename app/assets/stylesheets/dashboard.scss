@@ -12,11 +12,17 @@
     box-shadow: 0px -1px 5px #ccc;
   }
   .column a {
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
   }
+
+  .column .list-group-item{
+      margin-top: -25px;
+      margin-bottom: -25px;
+  }
+  
   .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
-    z-index: none !important;
+    z-index: 0 !important;
   }
   
   /* Clear floats after the columns */
