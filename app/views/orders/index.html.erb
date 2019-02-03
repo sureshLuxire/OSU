@@ -42,7 +42,7 @@
           <ul class="list-group">
           <li class="list-group-item active">Order Id : <%= order.id %> 
           <% if order.note != "" %> 
-          <a href='#' title='Note'><span class="glyphicon glyphicon-file"></span></a>
+          <a href='#' data-toggle="tooltip" title='Note'><span class="glyphicon glyphicon-file"></span></a>
           <%end%>
           </li>                   
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
@@ -64,7 +64,11 @@
     $(document).ready(function (){
         var table = $("#row-expand").DataTable({
             "responsive": true
-        });        
+        }); 
+        
+        $('[data-toggle="tooltip"]').tooltip(); 
     });
 </script> 
+<script>
+
   
