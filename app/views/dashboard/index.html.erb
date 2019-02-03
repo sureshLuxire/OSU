@@ -13,9 +13,9 @@
 <br>
 <div class="row">
   <div class="column">
-  <span class="h2" style="display:inline-block !important;">Total order to fulfill </span>
-  <div class="text-right"><%= link_to "View All", orders_path, :class => 'glyphicon glyphicon-eye-open'  %></div>
-   <% @orders.each do |order| %>
+  <div class="text-right"><%= link_to "", orders_path, :class => 'glyphicon glyphicon-eye-open'  %></div>
+  <span class="h2" style="display:inline-block !important;">Total order to fulfill </span>  
+   <% @orders.recent(3).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
