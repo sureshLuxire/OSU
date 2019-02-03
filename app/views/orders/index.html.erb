@@ -5,7 +5,6 @@
       });
     </script>
   <% end %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <div class='col-lg-12' style="margin-bottom:20px;">
@@ -45,7 +44,7 @@
           <ul class="list-group">
           <li class="list-group-item active">Order Id : <%= order.id %> 
           <% if order.note != "" %> 
-          <a href='#' data-toggle="tooltip" title='Note'><span class="glyphicon glyphicon-file"></span></a>
+          <a href='#' data-toggle="tooltip" title='{ order.note }'><span class="glyphicon glyphicon-file"></span></a>
           <%end%>
           </li>                   
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
