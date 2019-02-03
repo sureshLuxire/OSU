@@ -78,15 +78,17 @@
     $(document).ready(function (){
         var table = $("#row-expand").DataTable({
             "responsive": true
-        }); 
-        
-        $('[data-toggle="tooltip"]').tooltip(); 
-
-        $("#myBtn").click(function(){
-        $("#myModal").modal();
-         });
+        });       
     });
 </script> 
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+});
+</script>
 <script>
 
   
