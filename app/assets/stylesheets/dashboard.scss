@@ -12,12 +12,12 @@
     box-shadow: 0px -1px 5px #ccc;
     margin: 0 auto;
   }
-  .list-group a {
+  .list-group, column a {
     color: #ffffff !important;
     text-decoration: none;
   }
    
-  .list-group .glyphicon{
+  .list-group, .column .glyphicon{
     float: right;
   }
   .column .list-group-item{

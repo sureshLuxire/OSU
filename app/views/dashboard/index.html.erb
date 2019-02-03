@@ -18,12 +18,12 @@
   <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
+   <li><%=order.financial_status%></li>
    <li>
     <% if order.fulfillment_status %> <%else%>
     Unfulfilled
     <%end%>
-    </li>
-    <li><%=order.financial_status%></li> 
+    </li>     
     <li>$<%=order.total_price%></li>  
    </ul>
    <%end%>
