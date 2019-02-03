@@ -13,8 +13,8 @@
 <br>
 <div class="row">
   <div class="column">
-  <h2 class="h2">Total order to fulfill </h2>
-  <div class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></div>
+  <span class="h2">Total order to fulfill </span>
+  <span class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></span>
   <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
