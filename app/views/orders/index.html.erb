@@ -32,7 +32,7 @@
       <% @orders.each do |order| %>        
         <tr>
           <td><%= order.name %></td>
-          <td><%= order.currency %><%= order.created_at %></td>
+          <td>$ <%= order.created_at %></td>
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
           <td><% if order.fulfillment_status %>
@@ -56,7 +56,7 @@
                              
           <li class="list-group-item active">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
-          <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : $<%= item.price %></li>
+          <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : $ <%= item.price %></li>
          
           </ul>          
           <%end%>        
