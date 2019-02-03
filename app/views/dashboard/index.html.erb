@@ -13,10 +13,9 @@
 <br>
 <div class="row">
   <div class="column">
-  <div class="text-right"><%= link_to "", orders_path, :class => 'glyphicon glyphicon-eye-open'  %></div>
-  <span class="h2" style="display:inline-block !important;">Total order to fulfill </span> 
-   <% orders = @Orders.limit(10) %> 
-   <% orders.each do |order| %>
+  <div class="text-right"><%= link_to "", orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></div>
+  <span class="h2" style="display:inline-block !important;">Total order to fulfill </span>  
+   <% @orders.recent(10).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
