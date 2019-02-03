@@ -15,7 +15,7 @@
   <div class="column">
   <span class="h2">Total order to fulfilled </span>
   <span class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></span>
-  <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
+  <% @orders.sort_by{|t| - t.fulfillment_status.to_i}.take(4).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li><%=order.financial_status%></li>
@@ -31,11 +31,11 @@
   <div class="column">
   <span class="h2">Total order to payments </span>
   <span class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></span>
-  <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
+  <% @orders.sort_by{|t| - t.financial_status.to_i}.take(4).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
-   <% if order.financial_status == 'authorized' %>
+   <% if order.financial_status == "authorized" %>
    <%= order.financial_status %>
    <%end%>
    </li>
