@@ -13,8 +13,17 @@
 <br>
 <div class="row">
   <div class="column text-center">
-    <h2>Total order to fulfill </h2>
-    <p>Some text..</p>
+  <h2>Total order to fulfill </h2>
+   <% @orders.each do |order|
+   <ul class="list-inline">
+   <li><%=order.name%></li>
+   <li>
+    <% if order.fulfillment_status =='Unfulfilled' %>
+    <%= order.fulfillment_status%>
+    <%end%>
+    </li>   
+   </ul>
+   <%end%>
   </div>
   <div class="column text-center">
     <h2>Column 2</h2>

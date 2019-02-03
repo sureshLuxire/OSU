@@ -46,19 +46,16 @@
           <span class="myBtn glyphicon glyphicon-file"></span>
           <%end%>
           <!-- Modal -->
-  <ul class="list-group modal fade myModal" role="dialog">
-    <li class="modal-dialog">
-    
-      <!-- Modal content-->
-      <ul class="list-group modal-content">
-        <li class="modal-body">
-          <%= order.note %>
-        </li>
-        
-      </ul>
-      
-    </li>
-  </ul>
+            <ul class="list-group modal fade myModal" role="dialog">
+              <li class="modal-dialog">    
+                <!-- Modal content-->
+                <ul class="list-group modal-content">
+                  <li class="modal-body">
+                    <%= order.note %>
+                  </li>        
+                </ul>      
+              </li>
+            </ul>
           </li>                   
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
