@@ -35,15 +35,15 @@
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
-   <% if order.financial_status %>
+   <% if order.financial_status == "authorized" %>
    <%= order.financial_status %>
    <%end%>
    </li>
    <li>
+    <% if order.fulfillment_status %>
     <%= order.fulfillment_status %>
-    <%order.fulfillment_status %>
     <%else%>
-    Unfulfilled
+    unfulfilled
     <%end%>
     </li>     
     <li>$<%=order.total_price%></li>  
