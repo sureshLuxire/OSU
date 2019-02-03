@@ -41,7 +41,7 @@
           <% order.line_items.each do |item| %>  
           <ul class="list-group">
           <li class="list-group-item active">Order Id : <%= order.id %> 
-          <% if order.note %> 
+          <% if order.note != "" %> 
           <a href='#' title='Note'><span class="glyphicon glyphicon-file"></span></a>
           <%end%>
           </li>                   
