@@ -13,13 +13,13 @@
 <br>
 <div class="row">
   <div class="column">
-  <span class="h2" style="display:inline-block !important;">Total order to fulfill </span>
+  <h2 class="h2">Total order to fulfill </h2>
   <div class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></div>
   <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
-    <% if order.fulfillment_status == true %>
+    <% if order.fulfillment_status ? %>
     Unfulfilled
     <%end%>
     </li>
