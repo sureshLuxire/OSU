@@ -19,7 +19,7 @@
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
-    <% if order.fulfillment_status ? %>
+    <% if order.fulfillment_status == null %>
     Unfulfilled
     <%end%>
     </li>
