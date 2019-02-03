@@ -12,17 +12,18 @@
 </div>
 <br>
 <div class="row">
-  <div class="column text-center">
+  <div class="column">
   <h2>Total order to fulfill </h2>
    <% @orders.limit(3).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
     <% if order.fulfillment_status =='Unfulfilled' %>
-    <span style='color:red'>Unfulfilled</span>
+    <span style="color:red">Unfulfilled</span>
     <%end%>
     </li>
-    <li><%=order.financial_status%></li>   
+    <li><%=order.financial_status%></li> 
+    <li>$<%=order.total_price%></li>  
    </ul>
    <%end%>
   </div>
