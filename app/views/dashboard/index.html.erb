@@ -15,11 +15,11 @@
   <div class="column">
   <div class="text-right"><%= link_to "", orders_path, :class => 'glyphicon glyphicon-eye-open'  %></div>
   <span class="h2" style="display:inline-block !important;">Total order to fulfill </span>  
-   <% @orders.recent(3).each do |order| %>
+   <% @orders.limit(3).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
-    <% if order.fulfillment_status =='Unfulfilled' %>
+    <% if order.fulfillment_status != "Fulfilled" %>
     Unfulfilled
     <%end%>
     </li>
