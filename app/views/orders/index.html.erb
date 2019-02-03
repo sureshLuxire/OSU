@@ -21,7 +21,6 @@
             <th>Fulfillment Status</th>
             <th>Shopify Status</th>
             <th>Total</th>
-            <th class="none">Order ID:</th>
             <th class="none"></th>
             <th class="none"></th>
             <th class="none"></th>
@@ -40,21 +39,14 @@
              <% else %>
              Unfulfilled
              <% end %>
-          </td>
-          <td>         
-             <select>
-             <option><%= order.tags %></option>
-             </select>                          
           </td>              
           <td>$<%= order.total_price %></td>         
-          <td><%= order.id %>
-          <span class="glyphicon glyphicon-info-sign"><%= order.note %></span>               
-          </td>
           <td>
           <% order.line_items.each do |item| %>  
           <ul class="list-group">
-                             
-          <li class="list-group-item active">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
+          <li class="list-group-item active">Order Id : <%= order.id %> <%= order.id %>
+          <span class="glyphicon glyphicon-info-sign"><%= order.note %></span> </li>                   
+          <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
           <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : $<%= item.price %></li>
          
