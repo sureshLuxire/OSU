@@ -13,14 +13,14 @@
 <br>
 <div class="row">
   <div class="column">
-  <h2>Total order to fulfill </h2>
+  <span class="h2" style="display:inline-block !important;">Total order to fulfill </span>
   <span class="text-right"><%= link_to "View All", orders_path  %></span>
    <% @orders.each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
    <li>
     <% if order.fulfillment_status =='Unfulfilled' %>
-    <span style="color:red">Unfulfilled</span>
+    Unfulfilled
     <%end%>
     </li>
     <li><%=order.financial_status%></li> 
