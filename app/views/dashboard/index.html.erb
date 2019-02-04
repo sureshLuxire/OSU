@@ -33,7 +33,7 @@
     <%end%>
     </li> 
     <li>
-    <% if order.payments_details.cvv_result_code == "H" %>
+    <% if order.transaction.payments_details.cvv_result_code == "H" %>
         <span class="glyphicon glyphicon glyphicon-warning-sign" title='This order has notes..'></span>
     <%end%>
     </li>
