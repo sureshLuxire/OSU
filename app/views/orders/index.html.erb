@@ -37,11 +37,7 @@
              unfulfilled
              <% end %>
           </td>              
-          <td>$<%= order.total_price %>
-          <% if order.cvv_result_code =="H" %>
-          <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
-          <%end%>
-          </td>         
+          <td>$<%= order.total_price %></td>         
           <td>
           <% order.line_items.each do |item| %>  
           <ul class="list-group">
