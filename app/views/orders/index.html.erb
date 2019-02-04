@@ -56,16 +56,18 @@
                 </ul>      
               </li>
             </ul>
-          </li>                   
+          </li> 
+          <li>
+          <% @product.images.each do |image| %>
+            <img src="<%=image.src%>" alt="<%=@product.title%>">
+          <% end %>  
+          </li>                
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
-          <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : $<%= item.price %></li>
-         
+          <li class="list-group-item">Total Quantity : <%= item.quantity %> | Price : $<%= item.price %></li>         
           </ul>          
-          <%end%>        
-          
-          </td>
-                             
+          <%end%>     
+          </td>                             
         </tr>
       <% end %>
     </tbody>
