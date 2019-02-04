@@ -13,8 +13,10 @@
 <br>
 <div class="row">
   <div class="column">
-  <span class="h2 text-center" style="margin-bottom:10px;">Orders to fulfilled </span>
+  <div style="margin-bottom:10px; text-align:center;">
+  <span class="h2" style="margin-bottom:10px;">Orders to fulfilled </span>
   <span class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></span>
+  </div>
   <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
@@ -29,8 +31,9 @@
    <%end%>
   </div>
   <div class="column">
-  <span class="h2 text-center"  style="margin-bottom:10px;">Payments to capture </span>
+  <div style="margin-bottom:10px; text-align:center;"><span class="h2">Payments to capture </span>
   <span class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></span>
+  </div>
   <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
    <ul class="list-inline">
    <li><%=order.name%></li>
