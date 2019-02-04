@@ -26,7 +26,12 @@
     unfulfilled
     <%end%>
     </li>     
-    <li>$<%=order.total_price%></li>  
+    <li>$<%=order.total_price%></li>
+    <li>
+    <% if order.note != "" %> 
+    <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
+    <%end%>
+    </li>  
    </ul>
    <%end%>
   </div>
@@ -50,6 +55,11 @@
     <%end%>
     </li>     
     <li>$<%=order.total_price%></li>  
+    <li>
+    <% if order.note != "" %> 
+    <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
+    <%end%>
+    </li>
    </ul>
    <%end%>
   </div>
