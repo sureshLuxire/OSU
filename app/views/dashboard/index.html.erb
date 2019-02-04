@@ -33,12 +33,8 @@
     <%end%>
     </li> 
     <li>
-    <% order.line_items.each do |item| %>
-      <% payments_details.each do |payments| %>
-        <% if payments.cvv_result_code == "H" %>
+    <% if order.payments_details.cvv_result_code == "H" %>
         <span class="glyphicon glyphicon glyphicon-warning-sign" title='This order has notes..'></span>
-        <%end%>
-      <%end%>
     <%end%>
     </li>
    </ul>
