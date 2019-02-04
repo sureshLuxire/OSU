@@ -59,7 +59,7 @@
           </li> 
           <li>
           <% @product.images.each do |image| %>
-            <img src="<%=image.src%>" alt="<%=@product.title%>">
+            <img src="<%=image.src%>" alt="">
           <% end %>  
           </li>                
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
