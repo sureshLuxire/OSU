@@ -32,7 +32,7 @@
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
           <td>
-          <%= select :category, ['Analytics','Commerce','Web'], :prompt => '-- Select One --', :required => true %>
+          <%= select :gender, ['Mare', 'Stallion', 'Gelding'] %>
           </td>              
           <td>$<%= order.total_price %></td>         
           <td>
