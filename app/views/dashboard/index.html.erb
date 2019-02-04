@@ -14,7 +14,7 @@
 <div class="row">
   <div class="column">
   <div style="margin-bottom:10px;">
-  <span class="h2" style="margin-bottom:10px;">Orders to fulfilled </span>
+  <span class="h3" style="margin-bottom:10px;">Orders to fulfilled </span>
   <span class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></span>
   </div>
   <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
@@ -31,7 +31,7 @@
    <%end%>
   </div>
   <div class="column">
-  <div style="margin-bottom:10px;"><span class="h2">Payments to capture </span>
+  <div style="margin-bottom:10px;"><span class="h3">Payments to capture </span>
   <span class="text-right"><%= link_to '', orders_path, :class => 'glyphicon glyphicon-eye-open', :title => 'View All'  %></span>
   </div>
   <% @orders.sort_by{|t| - t.created_at.to_i}.take(4).each do |order| %>
@@ -57,11 +57,11 @@
 
 <div class="row">
   <div class="column text-center">
-    <h2>Column 3</h2>
+    <h3>Column 3</h3>
     <p>Some text..</p>
   </div>
   <div class="column text-center">
-    <h2>Column 4</h2>
+    <h3>Column 4</h3>
     <p>Some text..</p>
   </div>
 </div>
