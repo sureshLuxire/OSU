@@ -29,13 +29,12 @@
         <tr>
           <td><%= order.name %></td>
           <td><%= order.created_at %></td>
-          <td style="text-transform: capitalize;"><%= order.customer.first_name+" "+order.customer.last_name %></td>
+          <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
-          <td><% if order.fulfillment_status %>
-             <%= order.fulfillment_status %>
-             <% else %>
-             unfulfilled
-             <% end %>
+          <td>
+          <%= form_for @orders do |f| %>
+          <%= f.select : order.fulfillment_status, options_for_select([['Unfulfilled'], ['Partially Fulfilled'], ['Fulfilled']], :selected => f.order.fulfillment_status),  {}, { :class => 'span3 controls controls-row' } %>
+          <%end%>
           </td>              
           <td>$<%= order.total_price %></td>         
           <td>
