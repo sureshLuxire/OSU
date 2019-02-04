@@ -23,7 +23,10 @@
     color: #000 !important;
     text-decoration: none;
   }
-   
+  .list-group select{
+    color:#000 !important;
+    float: right;
+  } 
   .list-group .glyphicon, .column .glyphicon{
     float: right;
   }
