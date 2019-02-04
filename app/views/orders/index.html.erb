@@ -40,14 +40,19 @@
           </td>              
           <td>$<%= order.total_price %></td>         
           <td>
-          <li class="list-group-item active">Order Id : <%= order.id %></li>
+          <li class="list-group-item active">Order Id : <%= order.id %>
           <% if order.note != "" %> 
           <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
-          <%end%>          
+          <%end%>
+          <select>
+           <option value="Unfulfilled"><% if order.fulfillment_status %><%= order.fulfillment_status %><%else%>unfulfilled<%end%></option>
+           <option value="Fulfilled">Unfulfilled</option>
+           <option value="Partially Fulfilled">partially fulfilled</option>
+           </select>          
           </li>
           <% order.line_items.each do |item| %>  
           <ul class="list-group">                    
-          <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %> | Total Quantity : <%= item.quantity %> &times; Price : $<%= item.price %></li>         
+          <li class="list-group-item"><span>Variant Title</span> : <%= item.title %> | <span>SKU</span> : <%= item.sku %> | <span>Total Quantity</span> : <%= item.quantity %> &times; <span>Price</span> : $<%= item.price %></li>         
           </ul>          
           <%end%>     
           </td>                             
