@@ -33,7 +33,7 @@
           <td><%= order.financial_status %></td>
           <td>
           <select>
-           <option value="Unfulfilled"><% order.fulfillment_status %><%= order.fulfillment_status %><%else%>unfulfilled<%end%></option>
+           <option value="Unfulfilled"><% if order.fulfillment_status %><%= order.fulfillment_status %><%else%>unfulfilled<%end%></option>
            <option value="Fulfilled">Unfulfilled</option>
            <option value="Partially Fulfilled">partially fulfilled</option>
            </select>
