@@ -32,7 +32,15 @@
     <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
     <%end%>
     </li> 
-     
+    <li>
+    <% order.line_items.each do |item| %>
+      <% payments_details.each do |payments| %>
+        <% if payments.cvv_result_code == "H" %>
+        <span class="myBtn glyphicon glyphicon glyphicon-warning-sign" title='This order has notes..'></span>
+        <%end%>
+      <%end%>
+    <%end%>
+    </li>
    </ul>
    <%end%>
   </div>
