@@ -32,7 +32,7 @@
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
           <td>
-          <%= select :gender, options_for_select([['Mare'], ['Stallion'], ['Gelding']], :selected => :gender) %>
+          <%= select :category, options_for_select(['Mare', 'Stallion', 'Gelding'], :selected => f.object.category), {}, { :class => 'span3 controls controls-row' } %>
           </td>              
           <td>$<%= order.total_price %></td>         
           <td>
