@@ -37,17 +37,18 @@
              unfulfilled
              <% end %>
           </td>              
-          <td>$<%= order.total_price %></td>         
+          <td>$<%= order.total_price %>
+          <% if order.cvv_result_code =="H" %>
+          <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
+          <%end%>
+          </td>         
           <td>
           <% order.line_items.each do |item| %>  
           <ul class="list-group">
           <li class="list-group-item active">Order Id : <%= order.id %> 
           <% if order.note != "" %> 
           <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
-          <%end%>
-          <% if item.cvv_result_code =="H" %>
-          <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
-          <%end%>
+          <%end%>          
           <!-- Modal -->
             <ul class="list-group modal fade myModal" role="dialog">
               <li class="modal-dialog">    
