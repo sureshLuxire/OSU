@@ -33,9 +33,9 @@
           <td><%= order.financial_status %></td>
           <td>
           <select>
-           <option value="">unfulfilled</option>
-           <option value=""><%= order.financial_status %></option>
-           <option value="">partially fulfilled</option>
+           <option value="Unfulfilled"><% order.fulfillment_status %><%= order.fulfillment_status %><%else%>unfulfilled<%end%></option>
+           <option value="Fulfilled">Unfulfilled</option>
+           <option value="Partially Fulfilled">partially fulfilled</option>
            </select>
           </td>              
           <td>$<%= order.total_price %></td>         
@@ -46,17 +46,6 @@
           <% if order.note != "" %> 
           <span class="myBtn glyphicon glyphicon glyphicon-bell" title='This order has notes..'></span>
           <%end%>          
-          <!-- Modal -->
-            <ul class="list-group modal fade myModal" role="dialog">
-              <li class="modal-dialog">    
-                <!-- Modal content-->
-                <ul class="list-group modal-content">
-                  <li class="modal-body">
-                    <%= order.note %>
-                  </li>        
-                </ul>      
-              </li>
-            </ul>
           </li>                 
           <li class="list-group-item">Variant Id : <%= item.variant_id %> | Product Id: <%= item.product_id %></li>
           <li class="list-group-item">Variant Title : <%= item.title %> | SKU : <%= item.sku %></li>
