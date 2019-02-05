@@ -63,9 +63,10 @@
 </div>
 
 <script>  
-    $(document).ready(function (){
+$(document).ready(function (){
         var table = $("#row-expand").DataTable({
-            "responsive": true
+            "responsive": true,
+            "order": [[ 3, "desc" ]]
         });       
     });
 </script> 
