@@ -30,11 +30,15 @@
   .list-group .glyphicon, .column .glyphicon{
     float: right;
   }
+
   .column .list-group-item{
       margin-top: -25px;
       margin-bottom: -25px;
   }
-  .list-group-item td, th{
+  table td, th{
+    font-size: 9pt;
+  }
+  .list-group li{
     font-size: 9pt;
     font-weight: 300;
   }
