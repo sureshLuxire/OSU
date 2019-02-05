@@ -32,7 +32,7 @@
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
           <td>
-          <select class="form-control>
+          <select>
            <option value="Fulfilled"><% if order.fulfillment_status %><%= order.fulfillment_status %><%else%>unfulfilled<%end%></option>
            <option value="Unfulfilled">Unfulfilled</option>
            <option value="Partially Fulfilled">partially fulfilled</option>
@@ -43,7 +43,7 @@
           <% order.line_items.each do |item| %>  
           <ul class="list-group">
           <li class="list-group-item active">Order Id : <%= order.id %>
-          <select class="form-control">
+          <select>
            <option value="Unfulfilled">Unfulfilled</option>
            <option value="OrderSheetMade">Order Sheet Made</option>
            <option value="PartiallyFulfilled">Partially Fulfilled</option>
