@@ -33,11 +33,11 @@
           <td><%= order.financial_status %></td>
           <td>
           <select class='form-control col-sm-2'>
-          <% for status in order.fulfillment_status %>
-           <% if status.fulfillment_status %>
-           <option value="<%= status.fulfillment_status %>" selected><%= status.fulfillment_status %></option>
+          <% order.fulfillment_status.each do |status| %>
+           <% if status %>
+           <option value="<%= status %>" selected><%= status %></option>
            <%else%>
-           <option value="unfulfilled">unfulfilled</option>
+           <option value="status"><%= status %></option>
            <%end%>
            <%end%>
            </select>
