@@ -31,12 +31,12 @@
           <td><%= order.created_at %></td>
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
-          <td>
-           
-           <select class='form-control col-md-1'>
-            <option value="0" selected>Unfulfilled</option>
+          <td>           
+           <select class='form-control col-md-1'>            
             <% if order.fulfillment_status %>
-            <option value="1"><%= order.fulfillment_status %></option>
+            <option value="1" selected><%= order.fulfillment_status %></option>
+            else
+            <option value="0">Unfulfilled</option>
             end         
             <option value="2">Partially Fulfilled</option>
             <option value="3">In Production</option>
