@@ -20,6 +20,7 @@
             <th>Customer</th>
             <th>Payment Status</th>
             <th>Fulfillment Status</th>
+            <th>Order Status</th>
             <th>Total</th>
             <th class="none"></th>                                  
         </tr>
@@ -43,7 +44,20 @@
             <option value="4">Order Sheet Made</option>
             <option value="5">On The Way</option>         
            </select>
-          </td>              
+          </td>
+          <td>
+           <select class='form-control col-md-1'>            
+            <% if order.tags %>
+            <option value="1"><%= order.tags%></option> 
+            else
+            <option value="1">Unfulfilled</option>
+            <%end%>
+            <option value="2">Partially Fulfilled</option>
+            <option value="3">In Production</option>
+            <option value="4">Order Sheet Made</option>
+            <option value="5">On The Way</option>         
+           </select>
+          </td>                   
           <td>$<%= order.total_price %></td>         
           <td>
           <% order.line_items.each do |item| %>  
