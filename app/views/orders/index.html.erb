@@ -32,14 +32,9 @@
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
           <td>
-          <select class='form-control col-sm-2'>
-          <% order.tags.each do |tag| %>
-           <% if tag %>
-           <option value="<%= tag %>" selected><%= tag %></option>
-           <%else%>
-           <option value="tag"><%= tag %></option>
-           <%end%>
-           <%end%>
+           <select class='form-control col-sm-2'>
+            <option value="0">Unfulfilled</option>
+            <option value="1" selected><%= order.tags %></option>          
            </select>
           </td>              
           <td>$<%= order.total_price %></td>         
