@@ -32,10 +32,14 @@
           <td><%= order.customer.first_name+" "+order.customer.last_name %></td>
           <td><%= order.financial_status %></td>
           <td>
-          <select>
-           <option value="Fulfilled"><% if order.fulfillment_status %><%= order.fulfillment_status %><%else%>unfulfilled<%end%></option>
-           <option value="Unfulfilled">Unfulfilled</option>
-           <option value="Partially Fulfilled">partially fulfilled</option>
+          <select class='form-control col-sm-2'>
+          <% for status in order.fulfillment_status %>
+           <% if status.fulfillment_status %>
+           <option value="<%= status.fulfillment_status %>" selected><%= status.fulfillment_status %></option>
+           <%else%>
+           <option value="unfulfilled">unfulfilled</option>
+           <%end%>
+           <%end%>
            </select>
           </td>              
           <td>$<%= order.total_price %></td>         
