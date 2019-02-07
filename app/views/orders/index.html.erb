@@ -36,6 +36,8 @@
             <option value="0">Unfulfilled</option>
             <% if order.fulfillment_status %>
             <option value="1"><%= order.fulfillment_status %></option> 
+            else
+            <option value="1"><%= order.fulfillment_status %></option>
             <%end%>
             <option value="2">Partially Fulfilled</option>
             <option value="3">In Production</option>

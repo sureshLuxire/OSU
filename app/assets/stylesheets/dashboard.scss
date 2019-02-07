@@ -13,6 +13,11 @@
     margin: 0 auto;
   }
 
+  .form-control { 
+    max-width:150px;
+    font-size: 9pt !important;
+  }
+
   table.dataTable>tbody>tr.child ul.dtr-details {
     display: inline !important;
   }
@@ -25,7 +30,7 @@
     color: #000 !important;
     text-decoration: none;
   }
-
+  
   .list-group select{
     color:#000 !important;
     float: right;
