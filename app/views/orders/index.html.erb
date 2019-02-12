@@ -100,23 +100,22 @@ $('[data-toggle="tooltip"]').tooltip();
 </script>
 
 <script>
-    var order_id = getElementById('order_id');
+    
   $('.status_submit').on('click', function(e) {
+    var order_id = getElementById('order_id');
     e.preventDefault();
-    $.ajax({
-      url: '/admin/orders/order_id/',
-      type: 'PUT',
+    $.ajax({     
+      url: '/admin/orders/#{order_id}/',
+      type: 'POST',
       contentType: "application/json; charset=utf-8",
-      //data: "{orders:" + JSON.stringify(order) + "}",
+      //data: JSON.stringify(dataObject),
       data: $('form').serialize(),
       success: function(data) {
-          alert("Order Status Updated..");
-          //ShopifyApp.flashNotice("Order Status Updated..");
+         ShopifyApp.flashNotice("Order Status Updated..");
           $('form')[0].reset();
       },
       error: function() {
-          alert("Warning: Order Status Updated Failed..");
-          //ShopifyApp.flashError("Warning: Order Status Updated Failed..");
+           ShopifyApp.flashError("Warning: Order Status Updated Failed..");
       }
     })
   });
