@@ -73,8 +73,8 @@
         </ul>          
         <%end%>
         <form class="text-right">
-          <input type="hidden" name="_method" value="put" />
-          <input type="hidden" id="order_id" value="<%= order.id%>" />
+          <input type="hidden" name="_method" value="post" />
+          <input type="hidden" name="order_id" value="<%= order.id%>" />
           <input type="hidden" name="tags" value="Fulfilled" />
           <input type="submit" class="btn btn-warning status_submit" value="Make To Fulfill">
         </form>        
@@ -99,13 +99,12 @@ $('[data-toggle="tooltip"]').tooltip();
 });
 </script>
 
-<script>
-    
+<script>    
   $('.status_submit').on('click', function(e) {
-    var order_id = getElementById('order_id');
+    //var order_id = getElementById('order_id');
     e.preventDefault();
     $.ajax({     
-      url: '/admin/orders/#{order_id}/',
+      url: '/admin/orders/',
       type: 'POST',
       contentType: "application/json; charset=utf-8",
       //data: JSON.stringify(dataObject),
