@@ -101,22 +101,25 @@ $('[data-toggle="tooltip"]').tooltip();
 });
 </script>
 
-<script>    
+<script>   
   $('.status_submit').on('click', function(e) {
-    //var order_id = getElementById('order_id');
     e.preventDefault();
+    var order_status = "order":{
+      "id": 737355268151,
+      "tags": "Testing Post Method"
+    }
     $.ajax({     
-      url: '/admin/orders/#{order_id}/',
-      type: 'POST',
+      url: 'https://{{API_KEY}}@{{SHOP}}/admin/orders/737355268151/fulfillments.json',
+      type: 'PUT',
       contentType: "application/json; charset=utf-8",
-      //data: JSON.stringify(dataObject),
-      data: $('form').serialize(),
+      data: JSON.stringify(order_status),
+      //data: $('form').serialize(),
       success: function(data) {
-         ShopifyApp.flashNotice("Order Status Updated..");
-          $('form')[0].reset();
+          ShopifyApp.flashNotice("Order Status Updated..");
+          //$('form')[0].reset();
       },
       error: function() {
-           ShopifyApp.flashError("Warning: Order Status Updated Failed..");
+          ShopifyApp.flashError("Warning: Order Status Updated Failed..");
       }
     })
   });
