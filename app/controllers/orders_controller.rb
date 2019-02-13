@@ -66,11 +66,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
       format.json { head :no_content }
     end
   end
-
-  def '/put/' do
-    @order = ShopifyAPI::Order.find(params[:id])
-  end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
