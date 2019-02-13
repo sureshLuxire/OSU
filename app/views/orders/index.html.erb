@@ -111,11 +111,11 @@ $('[data-toggle="tooltip"]').tooltip();
       url: 'https://{{API_KEY}}@{{SHOP}}/admin/orders/#{id}/fulfillments.json',
       type: 'PUT',
       contentType: "application/json; charset=utf-8",
-      data: JSON.stringify(order_status),
-      //data: $('form').serialize(),
+      //data: JSON.stringify(order_status),
+      data: $('form').serialize(),
       success: function(data) {
           ShopifyApp.flashNotice("Order Status Updated..");
-          //$('form')[0].reset();
+          $('form')[0].reset();
       },
       error: function() {
           ShopifyApp.flashError("Warning: Order Status Updated Failed..");

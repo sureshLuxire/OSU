@@ -9,7 +9,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     @orders = ShopifyAPI::Order.find(:all, params: { limit: 250})
     #@line_items = ShopifyAPI::LineItem.find(:all)
     @products = ShopifyAPI::Product.find(:all)
-    #@product = ShopifyAPI::Product.find(params[:id])
+    @order = ShopifyAPI::Order.find(params[:id])
   end
 
   # GET /orders/1
