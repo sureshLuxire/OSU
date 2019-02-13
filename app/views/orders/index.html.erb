@@ -5,6 +5,7 @@
     });
   </script>
 <% end %>
+
 <%- model_class = Order -%>
 <div class="page-header" style="margin-top:-10px;">
   <span class='h1 text-left' style="display:inline !important;"><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></span>
@@ -15,14 +16,14 @@
 <table id="row-expand" class="table table-striped" cellspacing="0" width="100%">
   <thead>
       <tr>
-          <th>Order</th>
-          <th>Date</th>
-          <th>Customer</th>
-          <th>Payment Status</th>
-          <th>Fulfillment Status</th>
-          <th>Order Status</th>
-          <th>Total</th>
-          <th class="none"></th>                                  
+        <th>Order</th>
+        <th>Date</th>
+        <th>Customer</th>
+        <th>Payment Status</th>
+        <th>Fulfillment Status</th>
+        <th>Order Status</th>
+        <th>Total</th>
+        <th class="none"></th>                                  
       </tr>
   </thead>
   <tbody class='myTable'>
@@ -108,7 +109,7 @@ $('[data-toggle="tooltip"]').tooltip();
       "tags": "Testing Post Method"
     }
     $.ajax({     
-      url: 'https://{{API_KEY}}@{{SHOP}}/admin/orders/#{id}/fulfillments.json',
+      url: 'https://{{API_KEY}}@{{SHOP}}/admin/orders/#{order.id}/fulfillments.json',
       type: 'PUT',
       contentType: "application/json; charset=utf-8",
       //data: JSON.stringify(order_status),
@@ -121,6 +122,5 @@ $('[data-toggle="tooltip"]').tooltip();
           ShopifyApp.flashError("Warning: Order Status Updated Failed..");
       }
     })
-  });
-  
+  });  
 </script>
