@@ -75,7 +75,7 @@
         </ul>          
         <%end%>
         <form class="text-right">
-          <input type="hidden" name="_method" value="post" />
+          <input type="hidden" name="_method" value="put" />
           <!--<input type="hidden" name="order_id" value="<%= order.id%>" />-->
           <input type="hidden" name="fulfillment_status" value="Fulfilled" />
           <input type="submit" class="btn btn-warning status_submit" value="Make To Fulfill">
@@ -123,4 +123,5 @@ $('[data-toggle="tooltip"]').tooltip();
       }
     })
   });
+  
 </script>
