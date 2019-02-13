@@ -1,4 +1,3 @@
-
 <% content_for :javascript do %>
   <script type="text/javascript">
     ShopifyApp.ready(function(){
@@ -109,7 +108,7 @@ $('[data-toggle="tooltip"]').tooltip();
       "tags": "Testing Post Method"
     }
     $.ajax({     
-      url: 'https://{{API_KEY}}@{{SHOP}}/admin/orders/737355268151/fulfillments.json',
+      url: 'https://{{API_KEY}}@{{SHOP}}/admin/orders/#{id}/fulfillments.json',
       type: 'PUT',
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify(order_status),
