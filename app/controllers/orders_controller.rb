@@ -9,7 +9,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     @orders = ShopifyAPI::Order.find(:all, params: { limit: 250})
     #@line_items = ShopifyAPI::LineItem.find(:all)
     @products = ShopifyAPI::Product.find(:all)
-    @order = ShopifyAPI::Order.find(params[:id])
+    
   end
 
   # GET /orders/1
@@ -65,6 +65,10 @@ class OrdersController < ShopifyApp::AuthenticatedController
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def '/put/' do
+    @order = ShopifyAPI::Order.find(params[:id])
   end
 
   private
